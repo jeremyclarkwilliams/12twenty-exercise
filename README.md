@@ -2,6 +2,7 @@
 
 ```
 git clone https://github.com/jeremyclarkwilliams/12twenty-exercise.git
+cd 12twenty-exercise
 ```
 
 ### Install dependencies:
