@@ -1,0 +1,348 @@
+// colors
+$blue:          #006198;
+$gold:          #c4992f;
+$green:         #8cd17b;
+$white:         #fff;
+$black:         #000;
+$gray-darker:   #333;
+$gray-dark:     #666;
+$gray-mid:      #aaa;
+$gray-light:    #ccc;
+$gray-lighter:  #f5f5f5;
+
+.app {
+  color: $gray-darker;
+  font-size: 1.4rem;
+  overflow: hidden;
+}
+
+// general
+.hide {
+  display: none;
+}
+
+.label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+
+  &.label-select {
+    position: relative;
+
+    &:after {
+      border-color: $gray-dark transparent transparent transparent;
+      border-style: solid;
+      border-width: 5px;
+      content: '';
+      height: 0;
+      pointer-events: none;
+      position: absolute;
+      right: 2.4rem;
+      top: 3.2rem;
+      width: 0;
+    }
+  }
+
+  .input {
+    background: $white;
+    border: 1px solid $gray-mid;
+    border-radius: 4px;
+    color: $gray-dark;
+    display: block;
+    font-size: 1.4rem;
+    line-height: 2.2;
+    margin-top: .4rem;
+    padding: 0 1.4rem;
+    width: 100%;
+  }
+}
+
+.btn {
+  border-radius: 4px;
+  font-size: 1.4rem;
+  line-height: 2.2;
+  padding: 0 1.4rem;
+  transition: background .25s ease-in-out;
+
+  &.btn-primary {
+    background: $blue;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background: lighten($blue, 10%);
+    }
+  }
+
+  &.btn-secondary {
+    background: $gray-light;
+    color: $gray-darker;
+
+    &:hover,
+    &:focus {
+      background: lighten($gray-light, 10%);
+    }
+  }
+
+  .icon {
+    height: 1.2rem;
+    margin-right: .4rem;
+    vertical-align: -.1rem;
+    width: 1.2rem;
+  }
+}
+
+// app header
+.app-header {
+  border-bottom: 4px solid $blue;
+
+  @media (max-width: 425px) {
+    text-align: center;
+  }
+
+  .logo,
+  .headers {
+    vertical-align: middle;
+  }
+
+  .logo {
+    display: inline;
+    height: 6rem;
+  }
+
+  .headers {
+    align-items: flex-start;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hdr-1 {
+    color: $blue;
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+
+  .hdr-2 {
+    color: $gray-mid;
+    font-size: 1.4rem;
+  }
+}
+
+// app wrapper
+.wrapper {
+  align-items: stretch;
+  display: flex;
+  height: calc(100vh - 6.4rem);
+  overflow: hidden;
+  width: 100%;
+}
+
+// side nav
+.side-nav {
+  background: $gray-darker;
+  overflow-y: scroll;
+  padding: 1rem 0;
+  width: calc(100% / 12 * 2);
+
+  @media (max-width: 767px) {
+    width: calc(100% / 12 * 3);
+  }
+
+  // TODO: add feature to display nav
+  // by tapping/clicking some icon
+  @media (max-width: 425px) {
+    display: none;
+  }
+
+  .link-list {
+    margin-top: 2rem;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+
+  .link {
+    color: $gray-mid;
+    display: block;
+    line-height: 1.4;
+    padding: .4rem 1.4rem;
+    text-decoration: none;
+    transition: all .25s ease-in-out;
+
+    &:hover,
+    &:focus,
+    &.active {
+      background: $gray-dark;
+      color: $white;
+    }
+  }
+}
+
+// main content
+.content {
+  overflow-y: scroll;
+  padding: 1.4rem;
+  width: calc(100% / 12 * 10);
+
+  @media (max-width: 767px) {
+    width: calc(100% / 12 * 9);
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
+  }
+}
+
+.content-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.4rem;
+
+  .hdr {
+    color: $blue;
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
+
+  .actions {
+    
+    .btn {
+      margin-left: 1rem;
+    }
+  }
+}
+
+// filters
+.filters {
+  background: $gray-lighter;
+  border: 1px solid $gray-mid;
+  border-radius: 4px;
+  font-size: 0;
+  line-height: 0;
+  margin-bottom: 1.4rem;
+  padding: 2rem;
+
+  .label {
+    display: inline-block;
+    margin-bottom: 1.4rem;
+    padding-right: 1.4rem;
+    width: 25%;
+
+    &:nth-child(4n) {
+      padding-right: 0;
+    }
+
+    @media (max-width: 767px) {
+      width: 50%;
+
+      &:nth-child(2n) {
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: 425px) {
+      padding-right: 0;
+      width: 100%;
+    }
+  }
+
+  .actions {
+    text-align: right;
+    
+    .btn {
+      margin-left: 1rem;
+    }
+  }
+}
+
+// results
+.results {
+
+  .results-found {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: .4rem;
+    text-align: right;
+  }
+
+  .results-table {
+    border-top: 1px solid $gray-mid;
+    text-align: left;
+    width: 100%;
+
+    thead {
+      background: $gray-lighter;
+    }
+
+    tbody {
+
+      tr {
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+          background: lighten($gold, 50%);
+        }
+      }
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid $gray-mid;
+      padding: 1rem;
+
+      &:last-child {
+        text-align: center;
+      }
+    }
+
+    td {
+      font-size: 1.2rem;
+    }
+
+    .result-name {
+      color: $gold;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: .4rem;
+    }
+
+    .result-company {
+      font-weight: 700;
+      margin-bottom: .4rem;
+    }
+
+    .result-type-location {
+      color: $gray-mid;
+    }
+
+    .result-status {
+      background: $gray-light;
+      border-radius: .8rem;
+      color: $white;
+      display: inline-block;
+      line-height: 2rem;
+      padding: 0 1rem;
+      text-transform: capitalize;
+
+      &.open {
+        background: $green;
+      }
+
+      @media (max-width: 767px) {
+        background: none;
+        color: $gray-mid;
+        line-height: 1;
+        padding: 0;
+
+        &.open {
+          background: none;
+          color: $green;
+        }
+      }
+    }
+  }
+}
