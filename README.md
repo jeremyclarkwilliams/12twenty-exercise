@@ -1,8 +1,8 @@
 ### Download:
 
 ```
-git clone https://github.com/jeremyclarkwilliams/12twenty-exercise.git
-cd 12twenty-exercise
+git clone https://github.com/jeremyclarkwilliams/react-event-filtering-app.git
+cd react-event-filtering-app
 ```
 
 ### Install dependencies:
